@@ -1,0 +1,70 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+	<div id="contact" class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-box">
+						<h2>Contact with us</h2>
+						<p>Yêu cầu báo giá hoặc tư vấn</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-8 col-sm-10 col-xs-8">
+				  <div class="contact-block">
+					<form id="contactForm">
+					  <div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="true" data-error="Please enter your name"/>
+								<div class="help-block with-errors"></div>
+							</div>                                 
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required="true" data-error="Please enter your email"/>
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+                                              <div class="col-md-6">
+							<div class="form-group">
+								<input type="text" placeholder="Your Phone" id="phone" class="form-control" name="phone" required="true" data-error="Please enter your phone"/>
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+                                                            <input type="date" id="date" class="form-control" name="date" required="true" data-error="Please enter your suitable date"/>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+                                              <div class="col-md-6">
+							<div class="form-group">
+                                                            <input type="number" placeholder="Number of party table" id="num-of-table" class="form-control" name="date" required="true" data-error="Please enter number of party table"/>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group"> 
+								<textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required="true"></textarea>
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="submit-button text-center">
+								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
+								<div id="msgSubmit" class="h3 text-center hidden"></div> 
+								<div class="clearfix"></div> 
+							</div>
+						</div>
+					  </div>            
+					</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ui:composition>
+

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Home - Wedding</title>
+        
+        <!-- Bootstrap CSS -->
+        <h:outputStylesheet name="bootstrap.min.css" library="css" />
+        <!-- Pogo Slider CSS -->
+        <h:outputStylesheet name="pogo-slider.min.css" library="css" />
+        <!-- Responsive CSS -->
+        <h:outputStylesheet name="responsive.css" library="css" />
+        <!-- Custom CSS -->
+        <h:outputStylesheet name="custom.css" library="css" />
+        <!-- Site CSS -->
+        <h:outputStylesheet name="style.css" library="css" />
+    
+        <!-- ALL JS FILES -->
+        <h:outputScript name="jquery.min.js" library="js" />
+        <h:outputScript name="popper.min.js" library="js" />
+        <h:outputScript name="bootstrap.min.js" library="js" />
+	<!-- ALL PLUGINS -->
+        <h:outputScript name="jquery.magnific-popup.min.js" library="js" />
+        <h:outputScript name="jquery.pogo-slider.min.js" library="js" />
+        <h:outputScript name="slider-index.js" library="js" />
+        <!--<h:outputScript name="smoothscroll.js" library="js" />-->
+        <h:outputScript name="form-validator.min.js" library="js" />
+        <!--<h:outputScript name="contact-form-script.js" library="js" />-->
+        <h:outputScript name="custom.js" library="js" />
+    </h:head>
+    <h:body>
+        <ui:insert name="header">
+            <ui:include src="header.xhtml" />
+        </ui:insert>
+        <ui:insert name="banner">
+            <ui:include src="banner.xhtml" />
+        </ui:insert>
+        <ui:insert name="content">
+            <ui:include src="content.xhtml" />
+        </ui:insert>
+         <ui:insert name="contact">
+            <ui:include src="contact.xhtml" />
+        </ui:insert>
+        <ui:insert name="footer">
+            <ui:include src="footer.xhtml" />
+        </ui:insert>
+    </h:body>
+</html>
+
