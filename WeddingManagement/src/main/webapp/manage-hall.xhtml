@@ -12,8 +12,16 @@
             <ui:define name="content-admin">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Quản lý sảnh tiệc</h1>
+                    <div class="col-6 btn-toolbar mb-2 mb-md-0 input-group">
+                        <input class="form-control" type="search"
+                               placeholder="Tìm kiếm theo mã buổi tiệc"/>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" title="Tìm kiếm"
+                                    >Tìm kiếm</button>
+                        </div>
+                    </div>
                     <div class="btn-toolbar mb-2 mb-md-0">
-                        <button type="button" class="btn btn-outline-primary">Thêm sảnh mới</button>
+                        <button type="button" class="btn btn-outline-primary" title="Thêm sảnh mới">Thêm sảnh mới</button>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -42,11 +50,11 @@
                                     <td>meo</td>
                                     <td class="text-center">
                                         <div class="btn-group-vertical" role="group">
-                                            <button type="button" class="btn btn-secondary" >
+                                            <button type="button" class="btn btn-secondary" title="Xem chi tiết">
                                                 <i class="fas fa-info-circle"></i></button>
-                                            <button type="button" class="btn btn-primary" >
+                                            <button type="button" class="btn btn-primary" title="Chỉnh sửa">
                                                 <i class="fas fa-edit"></i></button>
-                                            <button id="delete" class="btn btn-danger"><i
+                                            <button id="delete" class="btn btn-danger" title="Xóa"><i
                                                     class="fas fa-trash-alt"></i></button>
                                         </div>
                                     </td>

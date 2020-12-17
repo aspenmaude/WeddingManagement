@@ -16,14 +16,28 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="#home">Trang chủ</a></li>
+                        <li>
+                        <h:form>
+                                <h:commandLink styleClass="nav-link" action="index?faces-redirect=true">
+                                    <i class="far fa-chart-bar"></i>
+                                    Trang chủ
+                                </h:commandLink>
+                            </h:form>
+                        </li>
                         <li><a class="nav-link" href="#about">Giới thiệu</a></li>
                         <li><a class="nav-link" href="#hall">Sảnh</a></li>
                         <li><a class="nav-link" href="#menu">Menu</a></li>
                         <li><a class="nav-link" href="#service">Dịch vụ</a></li>
                         <li><a class="nav-link" href="#gallery">Hình ảnh</a></li>
                         <li><a class="nav-link" href="#contact">Liên hệ</a></li>
-                        <li><a class="nav-link" href="#contact">Đặt tiệc</a></li>
+                        <li>
+                            <h:form>
+                                <h:commandLink styleClass="nav-link" action="order?faces-redirect=true">
+                                    <i class="far fa-chart-bar"></i>
+                                    Đặt tiệc
+                                </h:commandLink>
+                            </h:form>
+                        </li>
                     </ul>
                 </div>
             </div>

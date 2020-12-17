@@ -44,6 +44,7 @@ body {
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
+  font-size: large;
 }
 
 .sidebar .nav-link .feather {
@@ -117,4 +118,12 @@ body {
     .ms-sm-auto {
     margin-left: auto!important;
     }
+}
+
+.nav-link:hover{
+    color: #0056b3;
+}
+
+.nav-link:focus{
+     color: #007bff;
 }

@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/base-admin.xhtml">
+            <ui:define name="content-admin">
+                <div class="justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2 text-center">Đặt tiệc</h1>
+                </div>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nhập tên hoặc mã khách hàng</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-primary" title="Kiểm tra">Kiểm tra</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Khách hàng</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly="true" class="form-control-plaintext" id="staticEmail" value="email@example.com"/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="inputAddress2">Tình trạng</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
+                                <label class="form-check-label" for="inlineRadio1">Chưa thanh toán</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                <label class="form-check-label" for="inlineRadio2">Đã thanh toán</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label class="col-2 col-form-label" for="inputAddress">Ngày khai tiệc</label>
+                            <div class="col-10">
+                                <input type="datetime-local" class="form-control" id="inputAddress" 
+                                       placeholder="Ngày khai tiệc" required="true"
+                                       oninvalid="this.setCustomValidity('Vui lòng chọn ngày khai tiệc phù hợp')"
+                                       oninput="setCustomValidity('')"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col-4 col-form-label" for="exampleFormControlSelect1">Sảnh</label>
+                                    <div class="col-8">
+                                        <select class="form-control" id="exampleFormControlSelect1" required="true"
+                                                oninvalid="this.setCustomValidity('Vui lòng chọn sảnh tiệc phù hợp')"
+                                                oninput="setCustomValidity('')">
+                                            <option value="">Vui lòng chọn</option>
+                                            <option value="volvo">Volvo</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <label  class="col-4 col-form-label" for="exampleFormControlSelect2">Ca</label>
+                                    <div class="col-8">
+                                        <select class="form-control" id="exampleFormControlSelect2" required="true"
+                                                oninvalid="this.setCustomValidity('Vui lòng chọn ca phù hợp')"
+                                                oninput="setCustomValidity('')">
+                                            <option value="">Vui lòng chọn</option>
+                                            <option value="ca trưa">Trưa</option>
+                                            <option value="ca tối">Tối</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col-4 col-form-label">Thực đơn</label>
+                                    <div class="col-8 m-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" 
+                                                   required="true"
+                                                   oninvalid="this.setCustomValidity('Vui lòng chọn một trong hai loại thực đơn')"
+                                                   oninput="setCustomValidity('')"/>
+                                            <label class="form-check-label" for="inlineRadio1">Tự chọn</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                            <label class="form-check-label" for="inlineRadio2">Set menu</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col-4 col-form-label" for="soban">Số bàn tiệc</label>
+                                    <div class="col-8">
+                                        <input type="number" class="form-control" id="soban" min="1" max="100" required="true"
+                                               oninvalid="this.setCustomValidity('Vui lòng chọn số bàn tiệc')"
+                                               oninput="setCustomValidity('')"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h3 class="text-center col-12">Mon Ga</h3>
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                    <label class="form-check-label" for="inlineRadio2">MOn an so 1 con gà MOn an so 1 con gà</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                    <label class="form-check-label" for="inlineRadio2">MOn an so 1 con gà MOn an so 1 con gà</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                    <label class="form-check-label" for="inlineRadio2">MOn an so 1 con gà MOn an so 1 con gà</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                    <label class="form-check-label" for="inlineRadio2">MOn an so 1 con gà MOn an so 1 con gà</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                    <label class="form-check-label" for="inlineRadio2">MOn an so 1 con gà MOn an so 1 con gà</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label" for="setmenu">Danh sách set</label>
+                            <div class="col-10">
+                                <select class="form-control" id="exampleFormControlSelect1" required="true"
+                                        oninvalid="this.setCustomValidity('Vui lòng chọn set menu phù hợp')"
+                                        oninput="setCustomValidity('')">
+                                    <option value="">Vui lòng chọn</option>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <h3 class="text-center col-12">Set 1</h3>
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <p>MOn an so 1 con gà MOn an so 1 con gà</p>
+                                <p>MOn an so 1 con gà MOn an so 1 con gà</p>
+                                <p>MOn an so 1 con gà MOn an so 1 con gà</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col col-form-label">Thức uống</label>
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">Bia -</label>
+                                    </div>
+                                    <div class="row align-items-center pl-2">
+                                        <label class="col-form-label mr-1" for="soban">Số luong</label>
+                                        <div>
+                                            <input type="number" class="form-control form-control-sm" id="soban" min="1" max="100" required="true"
+                                                   oninvalid="this.setCustomValidity('Vui lòng chọn số bàn tiệc')"
+                                                   oninput="setCustomValidity('')"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">Bia -</label>
+                                    </div>
+                                    <div class="row align-items-center pl-2">
+                                        <label class="col-form-label mr-1" for="soban">Số luong</label>
+                                        <div>
+                                            <input type="number" class="form-control form-control-sm" id="soban" min="1" max="100" required="true"
+                                                   oninvalid="this.setCustomValidity('Vui lòng chọn số bàn tiệc')"
+                                                   oninput="setCustomValidity('')"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">Bia -</label>
+                                    </div>
+                                    <div class="row align-items-center pl-2">
+                                        <label class="col-form-label mr-1" for="soban">Số luong</label>
+                                        <div>
+                                            <input type="number" class="form-control form-control-sm" id="soban" min="1" max="100" required="true"
+                                                   oninvalid="this.setCustomValidity('Vui lòng chọn số bàn tiệc')"
+                                                   oninput="setCustomValidity('')"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label class="col col-form-label">Dịch vụ</label>
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">meof meos meo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">meof meos meo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                                        <label class="form-check-label" for="inlineRadio2">meof meos meo</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <label class="col-form-label" for="w3review">Ghi chú</label>
+                                <textarea class="form-control" id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-5">Đặt tiệc</button>
+                </form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

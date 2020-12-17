@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.mycompany_WeddingManagement_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.qltc.pojo.Product</class>
+    <class>com.qltc.pojo.User</class>
+    <class>com.qltc.pojo.MenuSet</class>
+    <class>com.qltc.pojo.Role</class>
+    <class>com.qltc.pojo.OrderDetail</class>
+    <class>com.qltc.pojo.UserRole</class>
+    <class>com.qltc.pojo.Image</class>
+    <class>com.qltc.pojo.MenuSetDetail</class>
+    <class>com.qltc.pojo.Order1</class>
+    <class>com.qltc.pojo.Code</class>
+    <class>com.qltc.pojo.Orders</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/qltieccuoidb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+    </properties>
+  </persistence-unit>
+</persistence>

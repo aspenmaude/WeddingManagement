@@ -766,9 +766,9 @@ button:focus{
 	height: 45px;
 	font-size: 16px;
 }
-select.form-control:not([size]):not([multiple]){
+/*select.form-control:not([size]):not([multiple]){
 	height: calc(45px + 2px);
-}
+}*/
 
 .help-block ul li{
 	color: red;
@@ -803,8 +803,4 @@ select.form-control:not([size]):not([multiple]){
 
 .pogoSlider-slide:nth-child(3){
     background-image:url(images/slider-03.jpg);
-}
-
-.intro{
-    text-align: justify;
 }
