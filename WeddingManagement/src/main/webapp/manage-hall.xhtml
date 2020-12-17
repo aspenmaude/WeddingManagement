@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/base-admin.xhtml">
+            <ui:define name="content-admin">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Quản lý sảnh tiệc</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-outline-primary">Thêm sảnh mới</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Tên sảnh</th>
+                                <th class="text-center">Mô tả</th>
+                                <th class="text-center">Giá</th>
+                                <th class="text-center">Tình trạng</th>
+                                <th class="text-center">Ghi chú</th>
+                                <th class="text-center">Hình ảnh</th>
+                                <th class="text-center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="hall" items="#{productBean.allHall}">
+                                <tr>
+                                    <td class="text-center">#{hall.id}</td>
+                                    <td>#{hall.name}</td>
+                                    <td>#{hall.description}</td>
+                                    <td class="text-right">#{hall.price}</td>
+                                    <td>#{hall.status}</td>
+                                    <td>#{hall.note}</td>
+                                    <td>meo</td>
+                                    <td class="text-center">
+                                        <div class="btn-group-vertical" role="group">
+                                            <button type="button" class="btn btn-secondary" >
+                                                <i class="fas fa-info-circle"></i></button>
+                                            <button type="button" class="btn btn-primary" >
+                                                <i class="fas fa-edit"></i></button>
+                                            <button id="delete" class="btn btn-danger"><i
+                                                    class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+
+                        </tbody>
+                    </table>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
