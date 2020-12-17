@@ -13,6 +13,7 @@
         <!-- ALL JS FILES -->
         <h:outputScript name="jquery.min.js" library="js" />
         <h:outputScript name="bootstrap.min.js" library="js" />
+        <h:outputScript name="dashboard.js" library="js" />
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
         
@@ -26,9 +27,12 @@
             <ui:insert name="slider-menu-admin">
                 <ui:include src="slider-menu-admin.xhtml" />
             </ui:insert>
-            <ui:insert name="content-admin">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <ui:insert name="content-admin">
                 <ui:include src="content-admin.xhtml" />
             </ui:insert>
+            </main>
+            
         </div>
         </div>
     </h:body>
