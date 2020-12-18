@@ -1,5 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700');
+
 body {
-  font-size: .875rem;
+    font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
 }
 
 .feather {
