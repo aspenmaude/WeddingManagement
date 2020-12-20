@@ -9,57 +9,71 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <ui:composition template="templates/base-admin.xhtml">
+        <ui:composition template="templates/admin/base-admin.xhtml">
             <ui:define name="content-admin">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2 text-center">Chinh sua sảnh tiệc</h1>
+                <div class="justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2 text-center">Thêm sảnh mới</h1>
                 </div>
-                
-                <div class="table-responsive">
-                    <table class="table table-sm table-bordered">
-                        <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th class="text-center">Tên sảnh</th>
-                                <th class="text-center">Mô tả</th>
-                                <th class="text-center">Giá</th>
-                                <th class="text-center">Tình trạng</th>
-                                <th class="text-center">Ghi chú</th>
-                                <th class="text-center">Hình ảnh</th>
-                                <th class="text-center">Thao tác</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach var="hall" items="#{productBean.allHall}">
-                                <tr>
-                                    <td class="text-center">#{hall.id}</td>
-                                    <td>#{hall.name}</td>
-                                    <td>#{hall.description}</td>
-                                    <td class="text-right">#{hall.price}</td>
-                                    <td>#{hall.status}</td>
-                                    <td>#{hall.note}</td>
-                                    <td>meo</td>
-                                    <td class="text-center">
-                                        <div class="btn-group-vertical" role="group">
-                                            
-                                            <button type="button" class="btn btn-secondary" >
-                                                <i class="fas fa-info-circle"></i></button>
-                                                <h:button styleClass="btn btn-primary" includeViewParams="true" outcome="hall?faces-redirect=true">
-                                                    <f:param name="hall_id" value="#{hall.id}"/>
-                                                    <i class="fas fa-edit"></i>
-                                                </h:button>
-<!--                                            <button type="button" class="btn btn-primary" >
-                                                <i class="fas fa-edit"></i></button>-->
-                                            <button id="delete" class="btn btn-danger"><i
-                                                    class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </c:forEach>
+                <div class="col-md-10 m-auto">
+                    <h:form enctype='multipart/form-data'>
+                        <div class="form-group row">
+                            <h:outputLabel for="inputHallName" class="col-2 col-form-label" value="Tên sảnh"/>
+                            <div class="col-10">
+                                <h:inputText styleClass="form-control" value="#{productBean.hallName}" id="inputHallName"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-2 col-form-label" for="textDescription" value="Mô tả"/>
+                            <div class="col-10">
+                                <h:inputTextarea styleClass="form-control" value="#{productBean.hallDescription}" id="textDescription" rows="2" cols="50"/>
+                            </div>
+                        </div>
 
-                        </tbody>
-                    </table>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-2 col-form-label" for="inputPrice" value="Giá" />
+                            <div class="col-10">
+                                <h:inputText  styleClass="form-control" value="#{productBean.hallPrice}" converterMessage="Please enter digits only." />
+                            </div>
+                        </div>
+                        <div class="form-group row pt-2">
+                            <h:outputLabel class="col-form-label pt-0 col-2" for="inputStatus" value="Tình trạng"/>
+                            <div class="col-10 m-auto">
+                                <h:selectOneRadio value="#{productBean.hallStatus}" class="mr-4">
+                                    <f:selectItem itemValue ="true" itemLabel = "Còn sử dụng" />
+                                    <f:selectItem  itemValue ="false" itemLabel = "Không được sử dụng" />
+                                </h:selectOneRadio>	   
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-2 col-form-label" for="inputImg" value="Hình ảnh" />
+                            <div class="col-10">
+                                <h:inputFile class="form-control-file border" 
+                                             value="#{productBean.hallImageFile}" id="inputImg"
+                                             validator="UploadValidator"/>
+                                <h:message for="inputImg" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <h:outputLabel class="col-form-label" for="w3review" value="Ghi chú" />
+                                <h:inputTextarea styleClass="form-control" value="#{productBean.hallNote}" id="w3review" rows="4" cols="50"/>
+                            </div>
+                        </div>
+                        <div class="form-group row float-right mb-5">
+                            <h:commandButton styleClass="btn btn-default mr-2" title="Hủy"
+                                             value="Hủy" >
+                            </h:commandButton>
+                            <h:commandButton styleClass="btn btn-secondary mr-2" title="Làm mới"
+                                             value="Làm mới" type="reset" >
+                            </h:commandButton>
+                            <h:commandButton styleClass="btn btn-primary" title="Thêm sảnh mới" action="#{productBean.addProduct()}" 
+                                             value="Thêm sảnh mới">
+                            </h:commandButton>
+                        </div>
+                    </h:form>
                 </div>
+
             </ui:define>
         </ui:composition>
     </h:body>

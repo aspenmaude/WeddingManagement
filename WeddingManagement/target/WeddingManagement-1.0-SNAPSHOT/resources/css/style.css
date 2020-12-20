@@ -794,13 +794,13 @@ button:focus{
 
 /* my style start here */
 .pogoSlider-slide:nth-child(1){
-    background-image:url(images/slider-01.jpg);
+    background-image:url(images/slider/slider-01.jpg);
 }
 
 .pogoSlider-slide:nth-child(2){
-    background-image:url(images/slider-02.jpg);
+    background-image:url(images/slider/slider-02.jpg);
 }
 
 .pogoSlider-slide:nth-child(3){
-    background-image:url(images/slider-03.jpg);
+    background-image:url(images/slider/slider-03.jpg);
 }

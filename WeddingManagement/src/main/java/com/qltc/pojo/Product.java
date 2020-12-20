@@ -73,8 +73,10 @@ public class Product implements Serializable {
     private String note;
     @Column(name = "status")
     private Boolean status;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
-    private Collection<Image> imageCollection;
+    @Size(max = 255)
+    @Column(name = "image_url")
+    private String imageUrl;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "foodId")
     private Collection<MenuSetDetail> menuSetDetailCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
@@ -160,15 +162,6 @@ public class Product implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Image> getImageCollection() {
-        return imageCollection;
-    }
-
-    public void setImageCollection(Collection<Image> imageCollection) {
-        this.imageCollection = imageCollection;
-    }
-
-    @XmlTransient
     public Collection<MenuSetDetail> getMenuSetDetailCollection() {
         return menuSetDetailCollection;
     }
@@ -209,6 +202,20 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "com.qltc.pojo.Product[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the imageUrl
+     */
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    /**
+     * @param imageUrl the imageUrl to set
+     */
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
     
 }

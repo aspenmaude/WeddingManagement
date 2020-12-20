@@ -1,6 +1,5 @@
 package com.qltc.pojo;
 
-import com.qltc.pojo.Image;
 import com.qltc.pojo.MenuSetDetail;
 import com.qltc.pojo.OrderDetail;
 import java.math.BigDecimal;
@@ -9,7 +8,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-12-17T21:50:10")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-12-21T01:33:10")
 @StaticMetamodel(Product.class)
 public class Product_ { 
 
@@ -17,7 +16,7 @@ public class Product_ {
     public static volatile SingularAttribute<Product, String> unit;
     public static volatile CollectionAttribute<Product, OrderDetail> orderDetailCollection;
     public static volatile SingularAttribute<Product, BigDecimal> price;
-    public static volatile CollectionAttribute<Product, Image> imageCollection;
+    public static volatile SingularAttribute<Product, String> imageUrl;
     public static volatile SingularAttribute<Product, String> name;
     public static volatile CollectionAttribute<Product, MenuSetDetail> menuSetDetailCollection;
     public static volatile SingularAttribute<Product, String> description;

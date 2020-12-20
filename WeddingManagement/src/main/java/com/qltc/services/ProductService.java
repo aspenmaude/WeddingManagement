@@ -19,37 +19,55 @@ import org.hibernate.SessionFactory;
  * @author Vo Pham Huyen Khanh
  */
 public class ProductService {
-     private final static SessionFactory factory = HibernateUtils.getFACTORY();
-     
-     public List<Product> getAllHall() {
+
+    private final static SessionFactory factory = HibernateUtils.getFACTORY();
+
+    public List<Product> getAllHall() {
         try (Session session = factory.openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Product> query = builder.createQuery(Product.class);
             Root<Product> root = query.from(Product.class);
-            
+
             query.select(root)
                     .where(builder.equal(root.get("category"), "0301"));
 
             return session.createQuery(query).getResultList();
         }
     }
-     
-     public List<Product> getHallByKeyword(String kw) {
+
+    public List<Product> getHallByKeyword(String kw) {
         try (Session session = factory.openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Product> query = builder.createQuery(Product.class);
             Root<Product> root = query.from(Product.class);
             query.select(root);
-            
-            if(kw != null && !kw.isEmpty()){
+
+            if (kw != null && !kw.isEmpty()) {
                 String p = String.format("%%%s%%", kw);
                 Predicate p1 = builder.like(root.get("name").as(String.class), p);
                 Predicate p2 = builder.like(root.get("description").as(String.class), p);
-                
-                query = query.where(builder.and(builder.equal(root.get("category"), "0301"), builder.or(p1,p2)));
+
+                query = query.where(builder.and(builder.equal(root.get("category"), "0301"), builder.or(p1, p2)));
             }
-            
+
             return session.createQuery(query).getResultList();
         }
     }
+    
+    public boolean createOrUpdateHall(Product p){
+        try(Session session = factory.openSession()){
+            try{
+                session.getTransaction().begin();
+                
+                session.saveOrUpdate(p);
+                session.getTransaction().commit();
+                
+            }catch (Exception ex){
+                session.getTransaction().rollback();
+                return false;
+            }
+        }
+        return true;
+    }
+    
 }

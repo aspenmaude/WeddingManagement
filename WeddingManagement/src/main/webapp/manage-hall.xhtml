@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <ui:composition template="templates/base-admin.xhtml">
+        <ui:composition template="templates/admin/base-admin.xhtml">
             <ui:define name="content-admin">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Quản lý sảnh tiệc</h1>
@@ -18,10 +19,19 @@
                         <div class="input-group-append">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" title="Tìm kiếm"
                                     >Tìm kiếm</button>
+                            <!--                            <h:form>
+                                                        <h:commandButton styleClass="btn btn-outline-success my-2 my-sm-0" title="Tìm kiếm"
+                                                                         value="Tìm kiếm" >
+                                                        </h:commandButton>
+                                                    </h:form>-->
                         </div>
                     </div>
                     <div class="btn-toolbar mb-2 mb-md-0">
-                        <button type="button" class="btn btn-outline-primary" title="Thêm sảnh mới">Thêm sảnh mới</button>
+                        <h:form>
+                            <h:commandButton styleClass="btn btn-outline-primary" title="Thêm sảnh mới" action="hall?faces-redirect=true"
+                                             value="Thêm sảnh mới" >
+                            </h:commandButton>
+                        </h:form>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -45,17 +55,29 @@
                                     <td>#{hall.name}</td>
                                     <td>#{hall.description}</td>
                                     <td class="text-right">#{hall.price}</td>
-                                    <td>#{hall.status}</td>
+                                    <td>#{hall.status==true? "Còn sử dụng":"Không được sử dụng"}</td>
                                     <td>#{hall.note}</td>
-                                    <td>meo</td>
+                                    <td>#{hall.imageUrl}</td>
                                     <td class="text-center">
                                         <div class="btn-group-vertical" role="group">
-                                            <button type="button" class="btn btn-secondary" title="Xem chi tiết">
-                                                <i class="fas fa-info-circle"></i></button>
-                                            <button type="button" class="btn btn-primary" title="Chỉnh sửa">
-                                                <i class="fas fa-edit"></i></button>
-                                            <button id="delete" class="btn btn-danger" title="Xóa"><i
-                                                    class="fas fa-trash-alt"></i></button>
+                                            <h:form class="btn btn-secondary">
+                                                <h:link styleClass="text-white" includeViewParams="true" outcome="hall?faces-redirect=true"> 
+                                                    <i class="fas fa-info-circle"></i>
+                                                    <f:param name="hall_id" value="#{hall.id}" />
+                                                </h:link>
+                                            </h:form>
+                                            <h:form class="btn btn-primary">
+                                                <h:link styleClass="text-white" includeViewParams="true" outcome="hall?faces-redirect=true"> 
+                                                    <i class="fas fa-edit"></i>
+                                                    <f:param name="hall_id" value="#{hall.id}" />
+                                                </h:link>
+                                            </h:form>
+                                            <h:form class="btn btn-danger">
+                                                <h:commandLink styleClass="text-white"> 
+                                                    <i class="fas fa-trash-alt"></i>
+                                                    <f:ajax />
+                                                </h:commandLink>
+                                            </h:form>
                                         </div>
                                     </td>
                                 </tr>

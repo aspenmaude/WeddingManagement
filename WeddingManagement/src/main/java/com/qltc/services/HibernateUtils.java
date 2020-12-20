@@ -6,7 +6,6 @@
 package com.qltc.services;
 
 import com.qltc.pojo.Code;
-import com.qltc.pojo.Image;
 import com.qltc.pojo.MenuSet;
 import com.qltc.pojo.MenuSetDetail;
 import com.qltc.pojo.OrderDetail;
@@ -42,7 +41,6 @@ public class HibernateUtils {
         conf.setProperties(props);
         
         conf.addAnnotatedClass(Code.class);
-        conf.addAnnotatedClass(Image.class);
         conf.addAnnotatedClass(MenuSet.class);
         conf.addAnnotatedClass(MenuSetDetail.class);
         conf.addAnnotatedClass(OrderDetail.class);

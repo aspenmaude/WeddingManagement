@@ -2,8 +2,8 @@ F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\bean\ProductBean.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\MenuSet.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\services\CodeService.java
+F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\services\MenuSetService.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\MenuSetDetail.java
-F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\Image.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\services\HibernateUtils.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\User.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\Role.java
@@ -12,4 +12,5 @@ F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\serv
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\Code.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\Orders.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\OrderDetail.java
+F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\bean\MenuSetBean.java
 F:\GithubDesktop\WeddingManagement\WeddingManagement\src\main\java\com\qltc\pojo\Product.java
